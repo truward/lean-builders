@@ -5,11 +5,12 @@ Lean Builders
 
 This small library provides support for so-called 'lean builder' template. The idea is simple: in order to make
 writing builders simpler, it is assumed that the target classes will expose properties to the associated builders,
-so those builders will be able to modify them (e.g. by having builder class defined in the hosting class scope so that
-builder class will have an access to the private fields of the hosting class).
+so those builders will be able to modify them (e.g. by having builder class defined in the hosting class scope so that builder class will have an access to the private fields of the target class).
 
 Using this class gives the following benefits:
-* simplifies builders, so that builder implemented won't have to duplicate properties of the hosting class
+* simplifies builder definitions
+ * implemented builder won't have to duplicate properties of the target class
+ * target class doesn't need to implement a lengthy constructor that takes all the properties to initialize its fields
 * allows to minimize builders memory footprint
 
 ## Sample usage
